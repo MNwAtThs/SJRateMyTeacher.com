@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>TeachersRate</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/bar.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+  <!-- slick slider -->
+
+  <link rel="stylesheet" href="css/slick-theme.css" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+   <style>
+
+#left {
+  text-align: center;
+  height:100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  width: 75%;
+  overflow-y: scroll; 
+  color: aliceblue;
+}
+
+    </style> 
+    
+    
+<body>    
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar  fixed-top navbar-expand-lg custom_nav-container" style="background: #0F0E0E">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              TeachersRate
+            </span>
+          </a>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+            </div>
+            <div class="quote_btn-container">
+              <a href="" data-toggle="modal" id='loginbtn' data-target="#myModal">
+                <span>
+                  Login
+                </span>
+                <i class="fa fa-user"aria-hidden="true"></i>
+              </a>
+             <a href="dashboard.html" id='profilebtn'>
+                <span id='name'>
+                  Profile
+                </span>
+                <i class="fa fa-user"aria-hidden="true"></i>
+              </a>
+             <a href="dashboard.html" id='addbtn'>
+                <span id='name'>
+                  Add
+                </span>
+                <i class="fa fa-plus"aria-hidden="true"></i>
+              </a>
+<script>
+                $('.modal').on('shown.bs.modal', function (e) {
+  $("body").addClass("modal-open")
+});
+                </script>
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+    <div class="">
+      <div class="modal-body">
+        <div class="form-title text-center">
+          <h4 class="mb-5"><b>Login</b></h4>
+        </div>
+        <div class="d-flex flex-column text-center">
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email"placeholder="Your email address...">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="password" placeholder="Your password...">
+            </div>
+            <button type="button" class="btn btn-dark rounded-pill btn-block btn-round mb-5 mt-1" onclick="login()">Login</button>
+          </form>
+      </div>
+    </div>
+            </div>
+        </div>
+        
+          
+        <!-- Modal footer -->
+        <div class="">
+        <div class="signup-section text-center">Not a member yet?            
+          <button type="button" class="btn " data-dismiss="modal" data-toggle="modal" data-target="#myModal2" style="color: skyblue">Sign Up</button>.</div>
+            
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="myModal2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+    <div class="modal-body">
+    <div class="">
+      <div class="modal-body">
+        <div class="form-title text-center">
+          <h4 class="mb-5"><b>Sign Up</b></h4>
+        </div>
+        <div class="d-flex flex-column text-center">
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email"placeholder="Your email address...">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="full_name"placeholder="Full Name">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="password" placeholder="Your password...">
+            </div>
+            <button type="button" class="btn btn-dark rounded-pill btn-block btn-round mb-5 mt-1" onclick="register()">Sign Up</button>
+          </form>
+      </div>
+    </div>
+            </div>
+        </div>
+        
+          
+        <!-- Modal footer -->
+        <div class="">
+        <div class="signup-section text-center">Already a member yet?            
+          <button type="button" class="btn " data-dismiss="modal" data-toggle="modal" data-target="#myModal" style="color: skyblue">Sign In</button>.</div>
+            
+        </div>
+        
+      </div>
+    </div>
+  </div>
+              <form class="form-inline">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  <div class="bottom_bg">
+
+    <!-- contact section -->
+    <section class="contact_section layout_padding">
+
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            Add a new teacher
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form_container">
+              <form action="">
+                <div>
+                  <input type="text" autocomplete="off" id="namefield" placeholder="Name" />
+                </div>
+                <div>
+                  <input type="text" autocomplete="off" id="subject" placeholder="Subject" />
+                </div>
+                <div class="btn_box">
+                  <button id="submit" onclick="teacher()">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end contact section -->
+
+    <!-- info section -->
+    <section class="info_section ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <hr>
+          </div>
+        </div>
+        <div class="info_box ">
+          <div class="info_contact">
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Location
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                +01 1234567890
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope"></i>
+              <span>
+                demo@gmail.com
+              </span>
+            </a>
+          </div>
+          <div class="social_box">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end info_section -->
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+
+
+
+
+</body>
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <!-- Our script must be loaded after firebase references -->
+    
+    <script src="assets/bothofthem.js">
+</script>
+
+
+</html>

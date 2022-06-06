@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>TeachersRate</title>
+  <link rel="stylesheet" href="assets/slider.css">
+
+      <link rel="stylesheet" href="assets/range.css">
+      <link rel="stylesheet" href="assets/newcard.css">
+
+    <link rel="stylesheet" href="assets/toggle.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tom-select@2.0.0/dist/css/tom-select.bootstrap4.css">
+  <!-- bootstrap core css -->
+<script src="https://cdn.jsdelivr.net/npm/svelte-range-slider-pips@2.0.1/dist/svelte-range-slider-pips.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/inter-ui@3.11.0/inter.min.css'>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="css/bar.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+  <!-- slick slider -->
+
+  <link rel="stylesheet" href="css/slick-theme.css" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="assets/edited.css" rel="stylesheet" />
+  <link href="assets/style.css" rel="stylesheet" />
+    
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+   <style>
+
+#left {
+  text-align: center;
+  height:100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  width: 75%;
+  overflow-y: scroll; 
+  color: aliceblue;
+}
+
+    </style> 
+    
+    
+<body>    
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar  fixed-top navbar-expand-lg custom_nav-container" style="background: #0F0E0E">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              TeachersRate
+            </span>
+          </a>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+            </div>
+            <div class="quote_btn-container">
+              <a href="" data-toggle="modal" id='loginbtn' data-target="#myModal">
+                <span>
+                  Login
+                </span>
+                <i class="fa fa-user"aria-hidden="true"></i>
+              </a>
+             <a href="dashboard.html" id='profilebtn'>
+                <span id='name'>
+                  Profile
+                </span>
+                <i class="fa fa-user"aria-hidden="true"></i>
+              </a>
+             <a href="add.html" id='addbtn'>
+                <span id='name'>
+                  Add
+                </span>
+                <i class="fa fa-plus"aria-hidden="true"></i>
+              </a>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+  
+              <form class="form-inline">
+                    <div class="form-group has-search">
+                        <span class="fa fa-search form-control-feedback"></span>
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  <div class="">
+
+    <!-- contact section -->
+    <section class="layout_padding d-flex justify-content-center">
+<form id='form'>
+  <div class="form-group text-center ">
+    <div id="foo" class="mt-2 content" style="background: white; width: 100%; border-radius: 10px"><div name="infoDiv" class="info"><div name="user-info" class="user-info"><h1 name="" id="teacher_name"class="" style="color: black"></h1>
+     <h5 name="" id="subject"class="" style="color: grey"></h5>   
+    <h5 name="" id="avg_grade"class="" style="color: grey"></h5>
+     <h5 name="" id="retakes"class="" style="color: grey"></h5>   
+        <div id="follow" class=" ml-1" role="group"><h2 id="follow1" class="follow"></h2><h2 id="follow2" class="follow ml-1"></h2><h2 id="follow3" class="follow mr-1"></h2></div></div></div><div name="extra-info" class="extra-info"></div><div name="comments" class="comments"></div></div>
+      <div>
+      </div>
+  </div>
+<!-- Button trigger modal -->
+
+<form>
+    <div class="demo-container  text-center d-flex justify-content-center">
+			<h1 class="">Rate Your Professor</h1>
+			<div class="rating-control d-flex align-items-center">
+				<div class="rating-option" rating="1" selected-fill="#FFA98D">
+					<div class="icon">
+						<svg width="100%" height="100%" viewBox="0 0 50 50">
+							<path d="M50,25 C50,38.807 38.807,50 25,50 C11.193,50 0,38.807 0,25 C0,11.193 11.193,0 25,0 C38.807,0 50,11.193 50,25" class="base" fill="#C6CCD0"></path>
+							<path d="M25,31.5 C21.3114356,31.5 17.7570324,32.4539319 14.6192568,34.2413572 C13.6622326,34.7865234 13.3246514,36.0093483 13.871382,36.9691187 C14.4181126,37.9288892 15.6393731,38.2637242 16.5991436,37.7169936 C19.1375516,36.2709964 22.0103269,35.5 25,35.5 C27.9896731,35.5 30.8610304,36.2701886 33.4008564,37.7169936 C34.3606269,38.2637242 35.5818874,37.9288892 36.128618,36.9691187 C36.6753486,36.0093483 36.3405137,34.7880878 35.3807432,34.2413572 C32.2429676,32.4539319 28.6885644,31.5 25,31.5 Z" class="mouth" fill="#FFFFFF"></path>
+							<path d="M30.6486386,16.8148522 C31.1715727,16.7269287 31.2642212,16.6984863 31.7852173,16.6140137 C32.3062134,16.529541 33.6674194,16.3378906 34.5824585,16.1715729 C35.4974976,16.0052551 35.7145386,15.9660737 36.4964248,15.8741891 C36.6111841,15.9660737 36.7220558,16.0652016 36.8284271,16.1715729 C37.7752853,17.118431 38.1482096,18.4218859 37.9472002,19.6496386 C37.8165905,20.4473941 37.4436661,21.2131881 36.8284271,21.8284271 C35.26633,23.3905243 32.73367,23.3905243 31.1715729,21.8284271 C29.8093655,20.4662198 29.6350541,18.3659485 30.6486386,16.8148522 Z" class="right-eye" fill="#FFFFFF"></path>
+							<path d="M18.8284271,21.8284271 C20.1906345,20.4662198 20.3649459,18.3659485 19.3513614,16.8148522 C18.8284273,16.7269287 18.7357788,16.6984863 18.2147827,16.6140137 C17.6937866,16.529541 16.3325806,16.3378906 15.4175415,16.1715729 C14.5025024,16.0052551 14.2854614,15.9660737 13.5035752,15.8741891 C13.3888159,15.9660737 13.2779442,16.0652016 13.1715729,16.1715729 C12.2247147,17.118431 11.8517904,18.4218859 12.0527998,19.6496386 C12.1834095,20.4473941 12.5563339,21.2131881 13.1715729,21.8284271 C14.73367,23.3905243 17.26633,23.3905243 18.8284271,21.8284271 Z" class="left-eye" fill="#FFFFFF"></path>
+					  </svg>
+					</div>
+					<div class="label">Terrible</div>
+					<div class="touch-marker"></div>
+			  </div>
+			  <div class="rating-option" rating="2" selected-fill="#FFC385">
+					<div class="icon">
+			  		<svg width="100%" height="100%" viewBox="0 0 50 50">
+							<path d="M50,25 C50,38.807 38.807,50 25,50 C11.193,50 0,38.807 0,25 C0,11.193 11.193,0 25,0 C38.807,0 50,11.193 50,25" class="base" fill="#C6CCD0"></path>
+							<path d="M25,31.9996 C21.7296206,31.9996 18.6965022,32.5700242 15.3353795,33.7542598 C14.2935825,34.1213195 13.7466,35.2634236 14.1136598,36.3052205 C14.4807195,37.3470175 15.6228236,37.894 16.6646205,37.5269402 C19.617541,36.4865279 22.2066846,35.9996 25,35.9996 C28.1041177,35.9996 31.5196849,36.5918872 33.0654841,37.4088421 C34.0420572,37.924961 35.2521232,37.5516891 35.7682421,36.5751159 C36.284361,35.5985428 35.9110891,34.3884768 34.9345159,33.8723579 C32.7065288,32.6948667 28.6971052,31.9996 25,31.9996 Z" class="mouth" fill="#FFFFFF"></path>
+							<path d="M30.7014384,16.8148522 C30.8501714,16.5872449 31.0244829,16.3714627 31.2243727,16.1715729 C32.054483,15.3414625 33.1586746,14.9524791 34.2456496,15.0046227 C34.8805585,15.7858887 34.945378,15.8599243 35.5310714,16.593811 C36.1167648,17.3276978 36.1439252,17.3549194 36.5988813,17.9093628 C37.0538374,18.4638062 37.2801558,18.7149658 38,19.6496386 C37.8693903,20.4473941 37.496466,21.2131881 36.8812269,21.8284271 C35.3191298,23.3905243 32.7864699,23.3905243 31.2243727,21.8284271 C29.8621654,20.4662198 29.6878539,18.3659485 30.7014384,16.8148522 Z" class="right-eye" fill="#FFFFFF"></path>
+							<path d="M18.8284271,21.8284271 C20.1906345,20.4662198 20.3649459,18.3659485 19.3513614,16.8148522 C19.2026284,16.5872449 19.0283169,16.3714627 18.8284271,16.1715729 C17.9983168,15.3414625 16.8941253,14.9524791 15.8071502,15.0046227 C15.1722413,15.7858887 15.1074218,15.8599243 14.5217284,16.593811 C13.9360351,17.3276978 13.9088746,17.3549194 13.4539185,17.9093628 C12.9989624,18.4638062 12.772644,18.7149658 12.0527998,19.6496386 C12.1834095,20.4473941 12.5563339,21.2131881 13.1715729,21.8284271 C14.73367,23.3905243 17.26633,23.3905243 18.8284271,21.8284271 Z" class="left-eye" fill="#FFFFFF"></path>
+						</svg>
+					</div>
+					<div class="label">Bad</div>
+					<div class="touch-marker"></div>
+			  </div>
+			  <div class="rating-option" rating="3">
+					<div class="icon">
+				  	<svg width="100%" height="100%" viewBox="0 0 50 50">
+							<path d="M50,25 C50,38.807 38.807,50 25,50 C11.193,50 0,38.807 0,25 C0,11.193 11.193,0 25,0 C38.807,0 50,11.193 50,25" class="base" fill="#C6CCD0"></path>
+							<path d="M25.0172185,32.7464719 C22.4651351,33.192529 19.9789584,33.7240143 17.4783686,34.2837667 C16.4004906,34.5250477 15.7222686,35.5944568 15.9635531,36.6723508 C16.2048377,37.7502449 17.2738374,38.4285417 18.3521373,38.1871663 C20.8031673,37.6385078 23.2056119,37.1473427 25.7416475,36.6803253 C28.2776831,36.2133079 30.8254642,35.7953113 33.3839467,35.4267111 C34.4772031,35.2692059 35.235822,34.2552362 35.0783131,33.1619545 C34.9208042,32.0686729 33.89778,31.3113842 32.8135565,31.4675881 C30.2035476,31.8436117 27.6044107,32.2700339 17.4783686,34.2837667 Z" class="mouth" fill="#FFFFFF"></path>
+							<path d="M30.6486386,16.8148522 C30.7973716,16.5872449 30.9716831,16.3714627 31.1715729,16.1715729 C32.0016832,15.3414625 33.1058747,14.9524791 34.1928498,15.0046227 C35.0120523,15.0439209 35.8214759,15.3337764 36.4964248,15.8741891 C36.6111841,15.9660737 36.7220558,16.0652016 36.8284271,16.1715729 C37.7752853,17.118431 38.1482096,18.4218859 37.9472002,19.6496386 C37.8165905,20.4473941 37.4436661,21.2131881 36.8284271,21.8284271 C35.26633,23.3905243 32.73367,23.3905243 31.1715729,21.8284271 C29.8093655,20.4662198 29.6350541,18.3659485 30.6486386,16.8148522 Z" class="right-eye" fill="#FFFFFF"></path>
+							<path d="M18.8284271,21.8284271 C20.1906345,20.4662198 20.3649459,18.3659485 19.3513614,16.8148522 C19.2026284,16.5872449 19.0283169,16.3714627 18.8284271,16.1715729 C17.9983168,15.3414625 16.8941253,14.9524791 15.8071502,15.0046227 C14.9879477,15.0439209 14.1785241,15.3337764 13.5035752,15.8741891 C13.3888159,15.9660737 13.2779442,16.0652016 13.1715729,16.1715729 C12.2247147,17.118431 11.8517904,18.4218859 12.0527998,19.6496386 C12.1834095,20.4473941 12.5563339,21.2131881 13.1715729,21.8284271 C14.73367,23.3905243 17.26633,23.3905243 18.8284271,21.8284271 Z" class="left-eye" fill="#FFFFFF"></path>
+				  	</svg>
+					</div>
+					<div class="label">Okay</div>
+					<div class="touch-marker"></div>
+			  </div>
+			  <div class="rating-option" rating="4">
+					<div class="icon">
+			  		<svg width="100%" height="100%" viewBox="0 0 50 50">
+							<path d="M50,25 C50,38.807 38.807,50 25,50 C11.193,50 0,38.807 0,25 C0,11.193 11.193,0 25,0 C38.807,0 50,11.193 50,25" class="base" fill="#C6CCD0"></path>
+							<path d="M25,35 C21.9245658,35 18.973257,34.1840075 16.3838091,32.6582427 C15.4321543,32.0975048 14.2061178,32.4144057 13.64538,33.3660605 C13.0846422,34.3177153 13.401543,35.5437517 14.3531978,36.1044896 C17.5538147,37.9903698 21.2054786,39 25,39 C28.7945214,39 32.4461853,37.9903698 35.6468022,36.1044896 C36.598457,35.5437517 36.9153578,34.3177153 36.35462,33.3660605 C35.7938822,32.4144057 34.5678457,32.0975048 33.6161909,32.6582427 C31.026743,34.1840075 28.0754342,35 25,35 Z" class="mouth" fill="#FFFFFF"></path>
+							<path d="M30.6486386,16.8148522 C30.7973716,16.5872449 30.9716831,16.3714627 31.1715729,16.1715729 C32.0016832,15.3414625 33.1058747,14.9524791 34.1928498,15.0046227 C35.0120523,15.0439209 35.8214759,15.3337764 36.4964248,15.8741891 C36.6111841,15.9660737 36.7220558,16.0652016 36.8284271,16.1715729 C37.7752853,17.118431 38.1482096,18.4218859 37.9472002,19.6496386 C37.8165905,20.4473941 37.4436661,21.2131881 36.8284271,21.8284271 C35.26633,23.3905243 32.73367,23.3905243 31.1715729,21.8284271 C29.8093655,20.4662198 29.6350541,18.3659485 30.6486386,16.8148522 Z" class="right-eye" fill="#FFFFFF"></path>
+							<path d="M18.8284271,21.8284271 C20.1906345,20.4662198 20.3649459,18.3659485 19.3513614,16.8148522 C19.2026284,16.5872449 19.0283169,16.3714627 18.8284271,16.1715729 C17.9983168,15.3414625 16.8941253,14.9524791 15.8071502,15.0046227 C14.9879477,15.0439209 14.1785241,15.3337764 13.5035752,15.8741891 C13.3888159,15.9660737 13.2779442,16.0652016 13.1715729,16.1715729 C12.2247147,17.118431 11.8517904,18.4218859 12.0527998,19.6496386 C12.1834095,20.4473941 12.5563339,21.2131881 13.1715729,21.8284271 C14.73367,23.3905243 17.26633,23.3905243 18.8284271,21.8284271 Z" class="left-eye" fill="#FFFFFF"></path>
+			  		</svg>
+					</div>
+					<div class="label">Good</div>
+					<div class="touch-marker"></div>
+			  </div>
+			  <div class="rating-option" rating="5">
+					<div class="icon">
+			  		<svg width="100%" height="100%" viewBox="0 0 50 50">
+							<path d="M50,25 C50,38.807 38.807,50 25,50 C11.193,50 0,38.807 0,25 C0,11.193 11.193,0 25,0 C38.807,0 50,11.193 50,25" class="base" fill="#C6CCD0"></path>
+							<path d="M25.0931396,31 C22.3332651,31 16.6788329,31 13.0207,31 C12.1907788,31 11.6218259,31.4198568 11.2822542,32.0005432 C10.9061435,32.6437133 10.8807853,33.4841868 11.3937,34.17 C14.4907,38.314 19.4277,41 24.9997,41 C30.5727,41 35.5097,38.314 38.6067,34.17 C39.0848493,33.5300155 39.0947422,32.7553501 38.7884086,32.1320187 C38.4700938,31.4843077 37.8035583,31 36.9797,31 C34.3254388,31 28.6616205,31 25.0931396,31 Z" class="mouth" fill="#FFFFFF"></path>
+							<path d="M30.6486386,16.8148522 C30.7973716,16.5872449 30.9716831,16.3714627 31.1715729,16.1715729 C32.0016832,15.3414625 33.1058747,14.9524791 34.1928498,15.0046227 C35.0120523,15.0439209 35.8214759,15.3337764 36.4964248,15.8741891 C36.6111841,15.9660737 36.7220558,16.0652016 36.8284271,16.1715729 C37.7752853,17.118431 38.1482096,18.4218859 37.9472002,19.6496386 C37.8165905,20.4473941 37.4436661,21.2131881 36.8284271,21.8284271 C35.26633,23.3905243 32.73367,23.3905243 31.1715729,21.8284271 C29.8093655,20.4662198 29.6350541,18.3659485 30.6486386,16.8148522 Z" class="right-eye" fill="#FFFFFF"></path>
+							<path d="M18.8284271,21.8284271 C20.1906345,20.4662198 20.3649459,18.3659485 19.3513614,16.8148522 C19.2026284,16.5872449 19.0283169,16.3714627 18.8284271,16.1715729 C17.9983168,15.3414625 16.8941253,14.9524791 15.8071502,15.0046227 C14.9879477,15.0439209 14.1785241,15.3337764 13.5035752,15.8741891 C13.3888159,15.9660737 13.2779442,16.0652016 13.1715729,16.1715729 C12.2247147,17.118431 11.8517904,18.4218859 12.0527998,19.6496386 C12.1834095,20.4473941 12.5563339,21.2131881 13.1715729,21.8284271 C14.73367,23.3905243 17.26633,23.3905243 18.8284271,21.8284271 Z" class="left-eye" fill="#FFFFFF"></path>
+			  		</svg>
+					</div>
+					<div class="label">Great</div>
+					<div class="touch-marker"></div>
+			  </div>
+		  	<div class="current-rating" id='www'>
+					<div class="svg-wrapper"></div>
+					<div class="touch-marker"></div>
+		  	</div>
+			</div>
+    <script>
+$("#www").css("transform")
+aa.charAt(aa.length - 5)
+
+    </script>
+		</div>
+
+ <!-- here content -->
+<div class="range-input mt-3 mb-1">
+    <h1 class="mt-1">Level of Difficulty</h1>
+  <input id='diflev' type="range" min="0" max="5" value="0" step="1">
+  <div class="value">
+    <div></div>
+  </div>
+</div>
+<div class="form-group"> <!-- Radio group !-->
+		<label class="control-label">Would you take this prof again?</label>
+		<div class="radio">
+		  <label>
+			<input type="radio" id="nopeAgain" name="again" value="Nope">
+			Nope
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+			<input type="radio" id="yeahAgain"  name="again" value="Yeah">
+			Yeah
+		  </label>
+		</div>
+	</div>	
+<div class="form-group"> <!-- Radio group !-->
+		<label class="control-label">Attendance?</label>
+		<div class="radio">
+		  <label>
+			<input type="radio" id="nopeatt" name="attendance" value="Nope">
+			Nope
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+			<input type="radio" id="yeahatt"  name="attendance" value="Yeah">
+			Yeah
+		  </label>
+		</div>
+	</div>	
+    
+    
+<div class="form-group"> <!-- Radio group !-->
+		<label class="control-label">Was this class taken for credit??</label>
+		<div class="radio">
+		  <label>
+			<input type="radio" id="credit" name="credit" value="Nope">
+			Nope
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+			<input type="radio" id="credityeah"  name="credit" value="Yeah">
+			Yeah
+		  </label>
+		</div>
+	</div>	
+
+    <div class="form-group"> <!-- Radio group !-->
+		<label class="control-label">Textbook use</label>
+		<div class="radio">
+		  <label>
+			<input type="radio" id="book" name="textb" value="Nope">
+			Nope
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+			<input type="radio" id="bookyeah"  name="textb" value="Yeah">
+			Yeah
+		  </label>
+		</div>
+	</div>	
+<select id="select-tools" class="mb-3" placeholder="Grade Received"></select>
+
+
+<select id="select-tags" name="state[]" multiple placeholder="Select max 3 tags..." autocomplete="off">
+			<option value="">Select tags...</option>
+			<option value="Gives good feedback">Gives good feedback</option>
+			<option value="Respected">Respected</option>
+			<option value="Lots of homework">Lots of homework</option>
+			<option value="Get ready to read">Get ready to read</option>
+			<option value="Inspirational" selected>Inspirational</option>
+			<option value="Caring">Caring</option>
+			<option value="Extra Credit">Extra Credit</option>
+			<option value="Test Heavy">Test Heavy</option>
+			<option value="Easy Pass">Easy Pass</option>
+			<option value="Skip class? You won't pass">Skip class? You won't pass</option>
+			<option value="Group Projects">Group Projects</option>
+			
+		</select>
+          <script src="https://cdn.jsdelivr.net/npm/tom-select@2.0.0/dist/js/tom-select.complete.min.js"></script>
+
+          <script>
+          
+
+new TomSelect("#select-tags",{
+	maxItems: 3
+});
+</script>
+    <script>
+    new TomSelect('#select-tools',{
+	maxItems: 1,
+	valueField: 'id',
+	labelField: 'title',
+	searchField: 'title',
+	options: [
+		{id: 'A+', title: 'A+'},
+		{id: 'A', title: 'A'},
+		{id: 'A-', title: 'A-'},
+		{id: 'B+', title: 'B+'},
+		{id: 'B', title: 'B'},
+		{id: 'B-', title: 'B-'},  
+		{id: 'C+', title: 'C+'},
+		{id: 'C', title: 'C'},
+		{id: 'C-', title: 'C-'},
+		{id: 'D+', title: 'D+'},
+		{id: 'D', title: 'D'},
+		{id: 'D-', title: 'D-'},
+		{id: 'Drop', title: 'Drop'},
+		{id: 'Incomplete', title: 'Incomplete'},
+		{id: 'N/A', title: 'N/A'},
+        {id: 'Rather not say', title: 'Rather not say'},
+	],
+	create: false
+});
+    </script>
+          <div class="form-group mt-5">
+    <label for="exampleFormControlTextarea1"></label>
+    <textarea class="form-control" id="comment" placeholder="Comment" rows="3"></textarea>
+  </div>
+<button type="button" id="submitrating" class="btn btn-primary">Submit</button>
+</form>
+
+
+    <div class="form-group" hidden>
+      
+</div>
+
+
+
+
+</form>
+        
+    </section>
+    <!-- end contact section -->
+
+    <!-- info section -->
+    <section class="info_section ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <hr>
+          </div>
+        </div>
+        <div class="info_box ">
+          <div class="info_contact">
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Location
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                +01 1234567890
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope"></i>
+              <span>
+                demo@gmail.com
+              </span>
+            </a>
+          </div>
+          <div class="social_box">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end info_section -->
+
+  </div>
+            <!-- The Modal -->
+  <div class="modal fade" id="rateTeacher">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+    <div class="">
+      <div class="modal-body">
+        <div class="form-title text-center">
+          <h4 class="mb-5"><b>Login</b></h4>
+        </div>
+        <div class="d-flex flex-column text-center">
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email"placeholder="Your email address...">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="password" placeholder="Your password...">
+            </div>
+            <button type="button" class="btn btn-dark rounded-pill btn-block btn-round mb-5 mt-1" onclick="login()">Login</button>
+          </form>
+      </div>
+    </div>
+            </div>
+        </div>
+        
+          
+        <!-- Modal footer -->
+        <div class="">
+        <div class="signup-section text-center">Not a member yet?            
+          <button type="button" class="btn " data-dismiss="modal" data-toggle="modal" data-target="#myModal2" style="color: skyblue">Sign Up</button>.</div>
+            
+        </div>
+        
+      </div>
+    </div>
+  </div>
+                
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src='https://cdn.jsdelivr.net/npm/gsap@3.0.1/dist/gsap.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/Draggable3.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- jQery -->
+
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+
+  <!-- End Google Map -->
+
+</body>
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <!-- Our script must be loaded after firebase references -->
+    
+    <script src="assets/bothofthem.js">
+</script>
+    <script src="assets/slider.js">
+</script>
+        
+    <script src="assets/toggle.js">
+</script>
+        
+   <script src="assets/range.js">
+</script>
+        
+   <script src="assets/newcard.js">
+</script>
+        
+        
+</html>

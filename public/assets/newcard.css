@@ -1,0 +1,98 @@
+
+.content {
+  margin: 50px auto;
+  min-width: 500px;
+  width: 75%;
+  background: #000;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+}
+
+.info {
+  color: #fff6e2;
+}
+.info .avatar {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #fff;
+  display: inline-block;
+  vertical-align: top;
+}
+.info .avatar img {
+  height: 100%;
+  width: 100%;
+}
+.info .user-info {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+}
+.info .user-info h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+.info .user-info #follow {
+  color: #fffddf;
+  background: #41e4b8;
+  padding: 5px 20px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 5px;
+}
+#follow{
+  color: #fffddf;
+  background: #41e4b8;
+  padding: 5px 20px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 5px;
+
+}
+.info .user-info #follow.following {
+  background: #41e4b8;
+  color: #fffddf;
+}
+.info .user-info #follow:focus {
+  outline: none;
+}
+
+.extra-info {
+  margin: 10px 0;
+  color: #fff6e2;
+  clear: both;
+}
+.extra-info label {
+  font-weight: bold;
+}
+
+.comments .comment {
+  background: #fff;
+  padding: 15px;
+  color: #0d7076;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+.comments .comment h2 {
+  margin: 0;
+  color: #06a9b3;
+}
+.comments .comment .date {
+  font-size: 12px;
+  color: #607a7d;
+}
+.comments .comment p {
+  margin: 15px;
+}
+.comments .comment .likes {
+  font-size: 13px;
+  text-align: right;
+}
+.comments .comment .likes .like {
+  font-weight: bold;
+  color: #06a9b3;
+}
+
+.right {
+  float: right;
+}
